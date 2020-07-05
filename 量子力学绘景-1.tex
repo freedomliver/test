@@ -1,0 +1,159 @@
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%   Version 4.1r of REVTeX, August 2010
+%
+%   Copyright (c) 2009, 2010 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%showpacs,preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-1}
+
+\usepackage{graphicx}% Include figure files
+\usepackage[UTF8]{ctex}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+
+\begin{document}
+
+
+\preprint{APS/123-QED}
+
+\title{量子力学绘景}% Force line breaks with \\
+
+\author{jincheng}
+ \email{jincheng@sjtu.edu.cn}
+\affiliation{%
+ SJTU university \textbackslash\textbackslash
+}%
+
+
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+量子力学绘景主要包括薛定谔绘景、海森堡绘景和相互作用绘景；其中，对于薛定谔绘景，可观测量算符不随时间演变；态矢量随时间演化。海森堡绘景则是态矢量不随时间演化，算符随时间演化。但是对于大多数情况下，系统都得不到准确解，所以在相互作用绘景下，可以求得系统的微扰解。
+\end{abstract}
+
+\pacs{Valid PACS appear here}% PACS, the Physics and Astronomy
+                             % Classification Scheme.
+%\keywords{Suggested keywords}%Use showkeys class option if keyword
+                              %display desired
+\maketitle
+
+%\tableofcontents
+
+\section{\label{sec:level1}薛定谔绘景}
+	
+在薛定谔绘景里，量子系统的态矢量随着时间流易而演化，而像位置、自旋一类的对应于可观察量的算符则与时间无关。
+在薛定谔绘景里，负责时间演化的算符是一种幺正算符，称为时间演化算符。假设时间从${\displaystyle t_{0}}$流易到${\displaystyle t}$，而经过这段时间间隔，态矢量${\displaystyle |\psi (t_0)\rangle }$ 演化为态矢量${\displaystyle |\psi (t)\rangle }$，这时间演化过程以方程表示为$|\psi (t)\rangle =U(t,t_{0})|\psi (t_{0})\rangle$；
+其中，$U(t,t_{0})$是时间演化算符。假设系统的哈密顿量H不含时，则时间演化算符为$U(t,t_{0})=e^{-iH(t-t_{0})/\hbar}$
+
+
+所以，在薛定谔绘景下，态矢量以薛定谔方程演化，(S表示薛定谔绘景)$$i\hbar \frac{\partial}{\partial t} |\psi(t)\rangle_S = H |\psi(t)\rangle_S$$
+态矢量表示为：$$|\psi(t)\rangle_S=U(t,t_0)|\psi(t_0)\rangle_S$$所以有，$i\hbar \frac{\partial}{\partial t} U(t,t_0) = H U(t,t_0)$
+
+可观测量表示为：$$\langle Q \rangle_S = \langle \psi(t) | Q | \psi(t) \rangle = \langle\psi(t_0) |U^*Q U| \psi(t_0)\rangle $$
+
+\subsubsection{可观测量和算符}
+\paragraph{算符}
+算符又称算子，作用于物理系统的状态空间，使得物理系统从某种状态变换为另外一种状态；在量子力学里的算符称为“量子算符”，作用的对象是量子态。量子算符将某量子态映射为另一种量子态。
+
+\paragraph{可观测量}
+物理实验中可以观测到的物理量称为可观测量。每一个可观测量，都有其对应的算符（而且是厄密算符）。可观察量的算符也许会有很多本征值与本征态。
+
+\subsubsection{简单的哈密顿量守恒情况}
+假设系统的哈密顿量$\mathcal{H}$不含时，则时间演化算符为
+$U(t,t_{0})= e^{-iH(t-t_{0})/\hbar}$只能通过泰勒展开级数计算；态矢量为：
+$$|\psi(t)\rangle_S=e^{-iH(t-t_{0})/\hbar} |\psi(t_0)\rangle_S$$
+
+
+
+\section{\label{sec:level1}海森堡绘景}
+
+在海森堡绘景里，量子系统的态矢量不随着时间流易而演化，而像位置、自旋一类的对应于可观察量的算符则随着时间流易而演化。
+
+在海森堡绘景里，态矢量$|\psi \rangle _{\mathcal {H}}$不含时，而可观察量的算符$A_{\mathcal {H}}$含时，并且满足“海森堡运动方程”:
+$$ \frac {\partial }{\partial {t}}A_{\mathcal {H}}={1 \over i\hbar }[A_{\mathcal {H}},H]$$
+态矢量表示为：$$|\psi(t) \rangle_H = |\psi(t_0) \rangle_H = |\psi(t_0) \rangle_S$$
+可观测量表示为：$$\langle A \rangle_H = \langle \psi(t_0) | A_H(t) | \psi(t_0) \rangle = \langle \psi(t_0) |U^* A_S U |\psi(t_0) \rangle$$
+
+\subsubsection{海森堡运动方程}
+从某种角度来看，海森堡绘景比薛定谔绘景显得更为自然，更具有基础性，因为，经典力学分析物体运动所使用的物理量是可观察量，例如，位置、动量等等，而海森堡绘景专注的就是这些可观察量随着时间流易的演化。进一步来看，海森堡绘景表述的量子力学与经典力学的相似可以很容易的观察到：只要将对易算符改为泊松括号，海森堡方程立刻就变成了哈密顿力学里的运动方程，其形式表示为：
+
+$\frac {\partial }{\partial {t}} A = [A,\,H]_{Poisson}$ 
+在这里需要通过狄拉克量子化条件$[\ ,\,\ ]_{Poisson}\ \to \ \frac {[\ ,\,\ ]}{i\hbar }$，就可以从哈密顿力学的运动方程得到海森堡运动方程。
+
+\paragraph{通过薛定谔绘景推导海森堡运动方程}
+$\begin{aligned}{d \over dt}A_{\mathcal {H}}(t)&={\frac {\partial U^{\dagger }(t,0)}{\partial t}}A_{\mathcal {S}}U(t,0)+U^{\dagger }(t,0)A_{\mathcal {S}}{\frac {\partial U(t,0)}{\partial t}}\\&=-{1 \over i\hbar }U^{\dagger }HA_{\mathcal {S}}U+{1 \over i\hbar }U^{\dagger }A_{\mathcal {S}}HU\\&=-{1 \over i\hbar }U^{\dagger }HUU^{\dagger }A_{\mathcal {S}}U+{1 \over i\hbar }U^{\dagger }A_{\mathcal {S}}UU^{\dagger }HU\\&={1 \over i\hbar }[U^{\dagger }A_{\mathcal {S}}U,U^{\dagger }HU]\\\end{aligned}$
+
+\subsubsection{贝克-豪斯多夫引理}
+引理：${e^{B}Ae^{-B}}=A+[B,A]+{\frac {1}{2!}}[B,[B,A]]+{\frac {1}{3!}}[B,[B,[B,A]]]+\cdots$ 。相对应的，对于算符有：$ A_{\mathcal {H}}(t)=A_{\mathcal {H}}(0)+{\frac {it}{\hbar }}[H,A_{\mathcal {H}}(0)]-{\frac {t^{2}}{2!\hbar ^{2}}}[H,[H,A_{\mathcal {H}}(0)]]-{\frac {it^{3}}{3!\hbar ^{3}}}[H,[H,[H,A_{\mathcal {H}}(0)]]]+\cdots$基于此，可以对相关问题进行计算。
+
+\section{\label{sec:level1}相互作用绘景}
+
+相互作用绘景也叫狄拉克绘景，在相互作用绘景里，量子系统的态矢量和可观察量的算符都随着时间流易而演化。
+对于实际中遇到的问题，大多数情况下，总是有相互作用，哈密顿量$mathcal_{H}$随时间改变，薛定谔方程都得不到准确解，但是可以将哈密顿量拆分成准确部分和微小摄动，求其微扰解。$H = H_{0,S} + H_{I,S}$
+
+在相互作用绘景里，态矢量表示为：$$|\psi(t) \rangle_I = e^ {iH_{0,S}t\over \hbar}|\psi(t_0) \rangle_S$$
+在狄拉克绘景里，态矢量$|\psi (t)\rangle _{\mathcal {I}}\,\!$定义为
+$|\psi (t)\rangle _{\mathcal {I}}{\stackrel {def}{=}}e^{iH_{0,\,{\mathcal {S}}}\,t/\hbar }|\psi (t)\rangle _{\mathcal {S}}\,\!$
+其中，$|\psi (t)\rangle _{\mathcal {S}}\,\!$是在薛定谔绘景里的态矢量。
+
+由于在薛定谔绘景里， 态矢量$|\psi (t)\rangle _{\mathcal {S}}\,\!$与时间的关系为
+$ |\psi (t)\rangle _{\mathcal {S}}=e^{-iH_{\mathcal {S}}\,t/\hbar }|\psi (0)\rangle _{\mathcal {S}}\,\!$所以，在$ H_{0,{\mathcal {S}}},H_{\mathcal {S}}$对易的条件下，可以有
+$|\psi (t)\rangle _{\mathcal {I}}=e^{-iH_{1,\,{\mathcal {S}}}\,t/\hbar }|\psi (0)\rangle _{\mathcal {S}}\,\!$。
+算符表示为$ A_{\mathcal {I}}(t)\,\!$。定义为$$ A_{\mathcal {I}}(t)=e^{iH_{0,\,{\mathcal {S}}}\,t/\hbar }A_{\mathcal {S}}(t)\,e^{-iH_{0,\,{\mathcal {S}}}\,t/\hbar }\,\!$$
+其中，$ A_{\mathcal {S}}(t)\,\!$是在薛定谔绘景里对应的算符。
+
+量子态随时间演化为：$$ i\hbar {\frac {d}{dt}}|\psi (t)\rangle _{\mathcal {I}}=H_{1,\,{\mathcal {I}}}|\psi (t)\rangle _{\mathcal {I}}\,\!$$
+算符随时间演化为：$$ i\hbar {\frac {d}{dt}}A_{\mathcal {H}}(t)=\left[A_{\mathcal {H}}(t),\,H\right]\,\!$$
+
+
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******
